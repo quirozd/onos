@@ -23,6 +23,7 @@ import org.onosproject.net.intent.HostToHostIntent;
 import org.onosproject.net.intent.Intent;
 import org.onosproject.net.intent.IntentService;
 import org.onosproject.net.intent.IntentState;
+import org.onosproject.net.intent.OpticalConnectivityIntent;
 import org.onosproject.net.intent.PointToPointIntent;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -83,6 +84,8 @@ public final class IntentCodec extends JsonCodec<Intent> {
             return context.codec(PointToPointIntent.class).decode(json, context);
         } else if (type.equals(HostToHostIntent.class.getSimpleName())) {
             return context.codec(HostToHostIntent.class).decode(json, context);
+        } else if (type.equals(OpticalConnectivityIntent.class.getSimpleName())) {
+            return context.codec(OpticalConnectivityIntent.class).decode(json, context);
         }
 
         throw new IllegalArgumentException("Intent type "

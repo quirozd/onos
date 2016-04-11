@@ -52,6 +52,7 @@ import org.onosproject.net.intent.ConnectivityIntent;
 import org.onosproject.net.intent.Constraint;
 import org.onosproject.net.intent.HostToHostIntent;
 import org.onosproject.net.intent.Intent;
+import org.onosproject.net.intent.OpticalConnectivityIntent;
 import org.onosproject.net.intent.PointToPointIntent;
 import org.onosproject.net.key.DeviceKey;
 import org.onosproject.net.mcast.McastRoute;
@@ -99,6 +100,7 @@ public class CodecManager implements CodecService {
         registerCodec(PointToPointIntent.class, new PointToPointIntentCodec());
         registerCodec(Intent.class, new IntentCodec());
         registerCodec(ConnectivityIntent.class, new ConnectivityIntentCodec());
+        registerCodec(OpticalConnectivityIntent.class, new OpticalConnectivityIntentCodec());
         registerCodec(FlowEntry.class, new FlowEntryCodec());
         registerCodec(FlowRule.class, new FlowRuleCodec());
         registerCodec(TrafficTreatment.class, new TrafficTreatmentCodec());

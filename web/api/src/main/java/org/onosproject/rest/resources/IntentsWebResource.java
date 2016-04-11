@@ -44,6 +44,7 @@ import org.onosproject.net.intent.IntentService;
 import org.onosproject.net.intent.IntentState;
 import org.onosproject.net.intent.Key;
 import org.onosproject.net.intent.PointToPointIntent;
+import org.onosproject.net.intent.OpticalConnectivityIntent;
 import org.onosproject.rest.AbstractWebResource;
 import org.slf4j.Logger;
 
@@ -108,6 +109,8 @@ public class IntentsWebResource extends AbstractWebResource {
             root = codec(HostToHostIntent.class).encode((HostToHostIntent) intent, this);
         } else if (intent instanceof PointToPointIntent) {
             root = codec(PointToPointIntent.class).encode((PointToPointIntent) intent, this);
+        } else if (intent instanceof OpticalConnectivityIntent) {
+            root = codec(OpticalConnectivityIntent.class).encode((OpticalConnectivityIntent) intent, this);
         } else {
             root = codec(Intent.class).encode(intent, this);
         }
